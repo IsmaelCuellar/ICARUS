@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elyana - Demo HTML</title>
+  <link rel="stylesheet" href="../css/dashboard-style.css" />
+  <script src="../js/dashboardD.js"></script>
+
+  <style>
+    .sidebar .submenu { list-style: none; margin-left: 0; padding-left: 0; }
+    .overview-card { cursor: pointer; }
+    .logo { user-select: none; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo" style="cursor:pointer;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Elyana (Demo)</div>
+    <div class="profile">
+      <div class="profile-avatar">AD</div>
+      <div class="profile-info">
+        <span class="profile-name">Admin Demo</span>
+        <span class="profile-role">Administrador</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <aside class="sidebar">
+      <ul class="menu text-white">
+        <li class="active"><a href="index.html">🏞️ Dashboard</a></li>
+        <li><a href="users.html">👨‍💻 Usuarios</a></li>
+        <li><a href="#analitica">📈 Analítica</a></li>
+        <li><a href="#config">⚙️ Configuración</a></li>
+        <li class="submenu-parent" onclick="toggleSubmenu(this)">📚 Administración ▶</li>
+        <ul class="submenu open">
+          <li><a href="#ventas">💵 Ventas</a></li>
+          <li><a href="#inventario">📦 Inventario</a></li>
+          <li><a href="#finanzas">💹 Finanzas</a></li>
+          <li><a href="#marketing">📢 Marketing</a></li>
+        </ul>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="card-stats">
+                <div class="card-stats-header text-white">
+                    <h3 class="card-table-title">📊 Estadísticas de Usuarios</h3>
+                    <p class="card-table-subtitle">Métricas del sistema de usuarios</p>
+                </div>
+                <div class="card-stats-body">
+                    <div class="user-stats-grid text-white">
+                        <div class="stat-card">
+                            <div class="stat-number text-primary">4</div>
+                            <p class="stat-label">Total Usuarios</p>
+                        </div>
+                       
+                        <div class="stat-card">
+                            <div class="stat-number text-success">21</div>
+                            <p class="stat-label">Usuarios Activos</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number text-warning">3</div>
+                            <p class="stat-label">Usuarios Inactivos</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number text-info">5</div>
+                            <p class="stat-label">Nuevos Esta Semana</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number text-success">7%</div>
+                            <p class="stat-label">Tasa de Actividad</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number text-primary">6</div>
+                            <p class="stat-label">Tiempo Promedio Online</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+  </div>
+</body>
+</html>
