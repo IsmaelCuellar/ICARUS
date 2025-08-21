@@ -94,7 +94,6 @@
                         </form>
                     </div>
 
-                    <!-- Tabla de usuarios -->
                     <div class="table-responsive">
                          <table class="data-table">
                             <thead>
@@ -117,15 +116,13 @@
                                             <span class="badge ">Admin</span>
                                         </td>
                                         <td>
-                                           
                                                 <span class="badge badge-active">Activo</span>
-                                           
                                         </td>
                                         <td>31/12/2025 23:59:00</td>
                                         <td class="actions-cell">
                                             <div class="flex gap-8">
-                                                <button class="btn btn-sm btn-secondary" data-user-id="<?php echo (int)$u['user_id']; ?>">Editar</button>
-                                                <button class="btn btn-sm btn-danger" data-user-id="<?php echo (int)$u['user_id']; ?>">Eliminar</button>
+                                                <button class="btn btn-sm btn-secondary" data-user-id="">Editar</button>
+                                                <button class="btn btn-sm btn-danger" data-user-id="">Eliminar</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -133,48 +130,42 @@
                             </tbody>
                         </table>
                     </div>
-
-                    <!-- Paginación -->
                     <div class="pagination">
                         <span class="pagination-info">Mostrando 1 usuario</span>
                         <div class="pagination-controls">
-                           
                             <a class="pagination-btn " href="">Anterior</a>
-                           
                                 <a class="pagination-btn " href="?page=">2</a>
-                         
                             <a class="pagination-btn " href="">Siguiente</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card-table">
-                <div class="card-table-header text-white">
-                    <h3 class="card-table-title">🔄 Actividad Reciente</h3>
-                    <p class="card-table-subtitle">Últimas acciones de los usuarios</p>
-                </div>
-                <div class="card-table-body">
-                    <div class="activity-feed">
-                        
-                            <div class="activity-item">
-                                <div class="activity-icon system">⚙️</div>
-                                <div class="activity-content text-white">
-                                    <p class="activity-text">Sin actividad recientemente</p>
-                                    <p class="activity-time">No hubo actividad ultimamente</p>
-                                </div>
-                            </div>
-                       
-                                <div class="activity-item">
-                                    <div class="activity-icon user">👤</div>
-                                    <div class="activity-content text-white">
-                                        <p class="activity-text">Nuevo Usuario Activo</p>
-                                        <p class="activity-time">Usuario activo hace: 30 Minutos</p>
-                                    </div>
-                                </div>
-                       
+
+        <div class="card-table">
+            <div class="card-table-header text-white">
+                <h3 class="card-table-title">🔄 Actividad Reciente</h3>
+                <p class="card-table-subtitle">Últimas acciones de los usuarios</p>
+            </div>
+
+            <div class="card-table-body">
+                <div class="activity-feed">
+                    <div class="activity-item">
+                        <div class="activity-icon system">⚙️</div>
+                        <div class="activity-content text-white">
+                            <p class="activity-text">Sin actividad recientemente</p>
+                            <p class="activity-time">No hubo actividad ultimamente</p>
+                        </div>
                     </div>
+                        <div class="activity-item">
+                            <div class="activity-icon user">👤</div>
+                            <div class="activity-content text-white">
+                                <p class="activity-text">Nuevo Usuario Activo</p>
+                                <p class="activity-time">Usuario activo hace: 30 Minutos</p>
+                            </div>
+                        </div>
                 </div>
             </div>
+        </div>
     </main>
   </div>
 </body>
