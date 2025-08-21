@@ -30,14 +30,9 @@
       <ul class="menu text-white">
         <li class="active"><a href="index.html">🏞️ Dashboard</a></li>
         <li><a href="users.html">👨‍💻 Usuarios</a></li>
-        <li><a href="#analitica">📈 Analítica</a></li>
-        <li><a href="#config">⚙️ Configuración</a></li>
         <li class="submenu-parent" onclick="toggleSubmenu(this)">📚 Administración ▶</li>
         <ul class="submenu open">
-          <li><a href="#ventas">💵 Ventas</a></li>
-          <li><a href="#inventario">📦 Inventario</a></li>
-          <li><a href="#finanzas">💹 Finanzas</a></li>
-          <li><a href="#marketing">📢 Marketing</a></li>
+          <li><a href="inventario.html">📦 Inventario</a></li>
         </ul>
       </ul>
     </aside>
@@ -51,12 +46,12 @@
                 <div class="card-stats-body">
                     <div class="user-stats-grid text-white">
                         <div class="stat-card">
-                            <div class="stat-number text-primary">4</div>
+                            <div class="stat-number text-primary">1</div>
                             <p class="stat-label">Total Usuarios</p>
                         </div>
                        
                         <div class="stat-card">
-                            <div class="stat-number text-success">21</div>
+                            <div class="stat-number text-success">1</div>
                             <p class="stat-label">Usuarios Activos</p>
                         </div>
                         <div class="stat-card">
@@ -64,17 +59,119 @@
                             <p class="stat-label">Usuarios Inactivos</p>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number text-info">5</div>
+                            <div class="stat-number text-info">1</div>
                             <p class="stat-label">Nuevos Esta Semana</p>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number text-success">7%</div>
+                            <div class="stat-number text-success">100%</div>
                             <p class="stat-label">Tasa de Actividad</p>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number text-primary">6</div>
+                            <div class="stat-number text-primary">3 hrs</div>
                             <p class="stat-label">Tiempo Promedio Online</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-table">
+                <div class="card-table-header text-white">
+                    <div class="flex-between-center">
+                        <div>
+                            <h2 class="card-table-title">👨‍💻 Gestión de Usuarios</h2>
+                            <p class="card-table-subtitle">Administra los usuarios del sistema</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="openAddUserModal()">
+                            <span style="font-size: 16px;">+</span> Agregar Usuario
+                        </button>
+                    </div>
+                </div>
+                <div class="card-table-body text-white">
+                    <div class="mb-20">
+                        <form method="get" class="flex gap-10">
+                            <input type="text" name="q"  placeholder="Buscar por nombre o usuario..." class="search-input">
+                            <button type="submit" class="btn btn-secondary"><span style="font-size: 16px;">🔍</span> Buscar</button>
+                        </form>
+                    </div>
+
+                    <!-- Tabla de usuarios -->
+                    <div class="table-responsive">
+                         <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Usuario</th>
+                                    <th>Rol</th>
+                                    <th>Estado</th>
+                                    <th>Última Actividad</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Nombre Apellido</td>
+                                        <td>Usuario 1</td>
+                                        <td>
+                                            <span class="badge ">Admin</span>
+                                        </td>
+                                        <td>
+                                           
+                                                <span class="badge badge-active">Activo</span>
+                                           
+                                        </td>
+                                        <td>31/12/2025 23:59:00</td>
+                                        <td class="actions-cell">
+                                            <div class="flex gap-8">
+                                                <button class="btn btn-sm btn-secondary" data-user-id="<?php echo (int)$u['user_id']; ?>">Editar</button>
+                                                <button class="btn btn-sm btn-danger" data-user-id="<?php echo (int)$u['user_id']; ?>">Eliminar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Paginación -->
+                    <div class="pagination">
+                        <span class="pagination-info">Mostrando 1 usuario</span>
+                        <div class="pagination-controls">
+                           
+                            <a class="pagination-btn " href="">Anterior</a>
+                           
+                                <a class="pagination-btn " href="?page=">2</a>
+                         
+                            <a class="pagination-btn " href="">Siguiente</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-table">
+                <div class="card-table-header text-white">
+                    <h3 class="card-table-title">🔄 Actividad Reciente</h3>
+                    <p class="card-table-subtitle">Últimas acciones de los usuarios</p>
+                </div>
+                <div class="card-table-body">
+                    <div class="activity-feed">
+                        
+                            <div class="activity-item">
+                                <div class="activity-icon system">⚙️</div>
+                                <div class="activity-content text-white">
+                                    <p class="activity-text">Sin actividad recientemente</p>
+                                    <p class="activity-time">No hubo actividad ultimamente</p>
+                                </div>
+                            </div>
+                       
+                                <div class="activity-item">
+                                    <div class="activity-icon user">👤</div>
+                                    <div class="activity-content text-white">
+                                        <p class="activity-text">Nuevo Usuario Activo</p>
+                                        <p class="activity-time">Usuario activo hace: 30 Minutos</p>
+                                    </div>
+                                </div>
+                       
                     </div>
                 </div>
             </div>
