@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elyana - Demo HTML</title>
+  <link rel="stylesheet" href="../css/dashboard-style.css" />
+  <script src="../js/dashboardD.js"></script>
+
+  <style>
+    .sidebar .submenu { list-style: none; margin-left: 0; padding-left: 0; }
+    .overview-card { cursor: pointer; }
+    .logo { user-select: none; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo" style="cursor:pointer;" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Elyana (Demo)</div>
+    <div class="profile">
+      <div class="profile-avatar">AD</div>
+      <div class="profile-info">
+        <span class="profile-name">Admin Demo</span>
+        <span class="profile-role">Administrador</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <aside class="sidebar">
+      <ul class="menu text-white">
+        <li class="active"><a href="#dashboard">🏞️ Dashboard</a></li>
+        <li><a href="users.html">👨‍💻 Usuarios</a></li>
+        <li class="submenu-parent" onclick="toggleSubmenu(this)">📚 Administración ▶</li>
+        <ul class="submenu open">
+          <li><a href="inventario.html">📦 Inventario</a></li>
+        </ul>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="card-stats">
+                <div class="card-stats-header text-white">
+                    <h2 class="card-table-title">📦 Estado del Inventario</h2>
+                    <p class="card-table-subtitle">Resumen general del stock y productos</p>
+                </div>
+                <div class="card-stats-body">
+                    <div class="user-stats-grid text-white">
+                        <div class="stat-card">
+                            <div class="stat-number text-primary">1,247</div>
+                            <p class="stat-label">Productos Totales</p>
+                            <small style="color: #43a047;">↗ +23 nuevos esta semana</small>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number text-success">892</div>
+                            <p class="stat-label">En Stock</p>
+                            <small style="color: #43a047;">71.5% del inventario</small>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number text-warning">45</div>
+                            <p class="stat-label">Stock Bajo</p>
+                            <small style="color: #fbc02d;">Requiere reposición</small>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number text-danger">12</div>
+                            <p class="stat-label">Sin Stock</p>
+                            <small style="color: #e53935;">Reabastecer urgente</small>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number text-info">$234,567</div>
+                            <p class="stat-label">Valor Total</p>
+                            <small style="color: #43a047;">↗ +15.8% vs mes anterior</small>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number text-primary">98</div>
+                            <p class="stat-label">Categorías</p>
+                            <small style="color: #17a2b8;">Bien organizadas</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gestión de productos -->
+            <div class="card-table">
+                <div class="card-table-header text-white">
+                    <h3 class="card-table-title">🏷️ Gestión de Productos</h3>
+                    <p class="card-table-subtitle">Administra tu catálogo de productos</p>
+                </div>
+                <div class="card-table-body text-white">
+                    <!-- Controles superiores -->
+                    <div class="flex-between-center mb-20">
+                        <div class="flex-center gap-8">
+                            <span>🔍</span>
+                            <input type="text" placeholder="Buscar por nombre, SKU o categoría..." class="search-input">
+                            <select class="form-select">
+                                <option>Todas las categorías</option>
+                                <option>Electrónicos</option>
+                                <option>Ropa</option>
+                                <option>Hogar</option>
+                                <option>Deportes</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary">
+                            <span style="font-size: 16px;">+</span> Agregar Producto
+                        </button>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>SKU</th>
+                                    <th>Producto</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Estado</th>
+                                    <th>Última Actualización</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SP-001</td>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px;">�</div>
+                                            <span>Smartphone Pro Max</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-editor">Electrónicos</span></td>
+                                    <td style="font-weight: bold;">$899.99</td>
+                                    <td>
+                                        <span style="color: #43a047; font-weight: bold;">156</span>
+                                        <div style="font-size: 11px; color: #b0b3b8;">unidades</div>
+                                    </td>
+                                    <td><span class="badge badge-active">Disponible</span></td>
+                                    <td>02/08/2025</td>
+                                    <td class="actions-cell">
+                                        <div class="flex gap-8">
+                                            <button class="btn btn-sm btn-secondary">Editar</button>
+                                            <button class="btn btn-sm btn-danger">Eliminar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>LG-002</td>
+                                    <td>
+                                        <div class="flex-center gap-8">
+                                            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px;">💻</div>
+                                            <span>Laptop Gaming RGB</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-editor">Electrónicos</span></td>
+                                    <td class="font-bold">$1,299.99</td>
+                                    <td>
+                                        <span style="color: #fbc02d; font-weight: bold;">8</span>
+                                        <div style="font-size: 11px; color: #b0b3b8;">unidades</div>
+                                    </td>
+                                    <td><span class="badge badge-inactive">Stock Bajo</span></td>
+                                    <td>01/08/2025</td>
+                                    <td class="actions-cell">
+                                        <div class="flex gap-8">
+                                            <button class="action-btn action-btn-edit">Editar</button>
+                                            <button class="action-btn action-btn-delete">Reabastecer</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>AB-003</td>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px;">🎧</div>
+                                            <span>Auriculares Bluetooth</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-editor">Electrónicos</span></td>
+                                    <td style="font-weight: bold;">$79.99</td>
+                                    <td>
+                                        <span style="color: #43a047; font-weight: bold;">245</span>
+                                        <div style="font-size: 11px; color: #b0b3b8;">unidades</div>
+                                    </td>
+                                    <td><span class="badge badge-active">Disponible</span></td>
+                                    <td>30/07/2025</td>
+                                    <td class="actions-cell">
+                                        <div class="flex gap-8">
+                                            <button class="action-btn action-btn-edit">Editar</button>
+                                            <button class="action-btn action-btn-delete">Eliminar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CT-004</td>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px;">👕</div>
+                                            <span>Camiseta Deportiva</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-user">Ropa</span></td>
+                                    <td style="font-weight: bold;">$29.99</td>
+                                    <td>
+                                        <span style="color: #e53935; font-weight: bold;">0</span>
+                                        <div style="font-size: 11px; color: #b0b3b8;">sin stock</div>
+                                    </td>
+                                    <td><span class="badge badge-inactive">Agotado</span></td>
+                                    <td>28/07/2025</td>
+                                    <td class="actions-cell">
+                                        <div class="flex gap-8">
+                                            <button class="action-btn action-btn-edit">Editar</button>
+                                            <button class="action-btn action-btn-delete">Reabastecer</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+                    <div class="pagination">
+                        <span class="pagination-info">Mostrando 4 de 1,247 productos</span>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn">Anterior</button>
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </main>
+  </div>
+</body>
+</html>
